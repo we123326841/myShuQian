@@ -1,0 +1,2 @@
+1 继承Activity 的子类 也会同样执行相应的回调方法例如ListActivity increase instant onresume
+2 View 和ViewGroup onSizeChanged onmeasure  ondraw
