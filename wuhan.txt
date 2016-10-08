@@ -1,1 +1,11 @@
 1.github项目的导入(本地新建的项目的gradle build.gradle gradle.properties .gradle 共4个  实际上.gradle一般没有 没有的的话就不覆盖  覆盖到girhub项目文件 然后选Open an existing project 或者import project,再选项目下的build.gradle文件哦)     2.导入外库的办法(注意一个project 导入的是Module 不是project,其实处于项目路径也可以,它自动识别到Module导入 导入到project后此Module可以编译运行在模拟器上,作为一个独立app,也可以通过修改library跟去掉报名编译成一个外库 供其他Module使用,使用 compile project(“Module外库名”)) 3.自己想让Module做外库 先把application改为library 然后 去掉包名 编译一下 然后导入到project 供其他Module使用  使用 compile project(“Module外库名”)
+
+
+
+
+
+
+
+2.关于编码 文件编码 通过单击文件右键可以修改编码  ,字节数组 一定要按照规定的编码进行 解析才能得到正确的字符串 (byte[] b_gbk = "中".getBytes("GBK"); String s_gbk = new String(b_gbk,"GBK");) 但是注意的是byte[] b_iso88591 = "中".getBytes("ISO8859-1"); String s_iso88591 = new String(b_iso88591,"ISO8859-1"); s_iso88591是一个不被识别的字符（可以理解为乱码）,为什么使用ISO8859-1编码再组合之后,无法还原"中"字？原因很简单,因为ISO8859-1编码的编码表根本就不包含汉字字符,当然也就无法通过"中".getBytes("ISO8859-1");来得到正确的"中"字在ISO8859-1中的编码值了,所以，再通过new String()来还原就更是无从谈起
+
+文件修改编码会出现乱码 原因是 假设a.java文件是uft-8 编码的字符串显示为 “a中” 字节为97 -28 -72 -83 改为GBK编码之后 就乱码了 显示为 “a涓�” (因为97在GBK表示:a   -28 -72在GBK表示:涓 -83在GBK不认识所以显示�)
