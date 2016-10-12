@@ -14,3 +14,10 @@
 3. 文件是utf-8 有”a中” 这个字符串    byte[] arr = “a中”.getBytes()得到的就是utf-8编码的字节:97 -28 -72 -83  把文件改为GBK 相当于 String gbkStr = new String(arr,”GBK”); 按照 97在GBK表示:a   -28 -72在GBK表示:涓 -83在GBK不认识所以显示�),所以显示文字为:a涓� 
 
 注:getBytes()得到的是 次文件编码的 字节  . new String(arr) 表示 按照此文件编码 进行读取 
+
+
+
+
+4.android:Theme.Light.NoTitleBar 与 @android:style/Theme.Light.NoTitleBar 是一样的,
+
+  <style name="haha.pig"> 是继承于 <style name="haha"> 的
