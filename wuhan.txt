@@ -21,3 +21,11 @@
 4.android:Theme.Light.NoTitleBar 与 @android:style/Theme.Light.NoTitleBar 是一样的,
 
   <style name="haha.pig"> 是继承于 <style name="haha"> 的
+
+
+5.  <item name="colorPrimaryDark">@color/colorPrimaryDarsssssk</item>
+        <item name="colorPrimary">?colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">false</item>
+        <item name="colorButtonNormal">?colorPrimaryDark</item>
+注:?colorPrimaryDark 表示引用 colorPrimaryDark的值 也就是  @color/colorPrimaryDarsssssk的值
