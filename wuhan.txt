@@ -29,3 +29,23 @@
         <item name="windowNoTitle">false</item>
         <item name="colorButtonNormal">?colorPrimaryDark</item>
 注:?colorPrimaryDark 表示引用 colorPrimaryDark的值 也就是  @color/colorPrimaryDarsssssk的值
+
+
+6.get 和 post 都有 请求行 跟 请求头  而 post 多了 一个 请求体
+请求行:POST /MJServer/login HTTP/1.1
+请求头:Host: 192.168.1.17:8080
+Accept: */*
+          User-Agent: IOSRequestDemo/1 CFNetwork/808.0.2 Darwin/16.0.0
+          Accept-Language: zh-cn
+          Accept-Encoding: gzip, deflate
+          Connection: keep-alive
+
+
+7.请求体:"username=123&pwd=123"
+
+8.get 和 post的区别就是 post代码要多写一个 请求体 NSString * bodyStr =@"username=123&pwd=123";
+request.HTTPBody = [bodyStr dataUsingEncoding:NSUTF8StringEncoding];
+
+9.另外请求头里面的参数可以自定义比如:conn.setRequestProperty("User-Agent", "allen的note7");
+
+
