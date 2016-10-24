@@ -63,3 +63,11 @@ Proxy-Connection: Keep-alive实体内容:{"success":"登录成功"}
 //request 里面的 请求头的Content-Type 在传普通参数的情况下 不需要设置
 //如果传的是json数据 则要指定Content-Type 为 application/json
 //如果是上传图片 则需要指定Content-Type 为 multipart/form-data;boundary=FlPm4LpSXsE
+
+
+
+11.ios 导入外库 有两种方式 一种是直接把文件.h .m文件拖进项目 第二种是利用cocopods 导入
+
+第一张拖文件的方式 需要手动导入一些动态库  以及配置一些 header search paths 非常麻烦
+
+第二种 利用cocopods 可以直接一次性导入项目  不用配置什么  非常简单
