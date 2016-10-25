@@ -1,2 +1,11 @@
 1 继承Activity 的子类 也会同样执行相应的回调方法例如ListActivity increase instant onresume
 2 View 和ViewGroup onSizeChanged onmeasure  ondraw
+
+
+
+
+
+2.关于mac 安装系统(安装文件在我的移动硬盘里面) 1.首先制作usb安装盘 2.下载驱动程序 程序网址https://support.apple.com/zh-cn/HT205016 3.安装win7系统 4.安装驱动 5.利用oem7F激活win7系统  
+
+详细教程如下:http://www.xitongbuluo.com/jiaocheng/17720.html 和 http://www.iqiyi.com/w_19rqqu0ach.html
+ 
