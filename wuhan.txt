@@ -71,3 +71,8 @@ Proxy-Connection: Keep-alive实体内容:{"success":"登录成功"}
 第一张拖文件的方式 需要手动导入一些动态库  以及配置一些 header search paths 非常麻烦
 
 第二种 利用cocopods 可以直接一次性导入项目  不用配置什么  非常简单
+
+
+
+
+12.一般我们在浏览器输入一个网址访问网站都是GET请求
