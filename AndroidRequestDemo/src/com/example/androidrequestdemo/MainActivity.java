@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
 //
 //    	username=345&pwd=123
     	try{
-    		String requestURL = "http://192.168.1.17:8080/MJServer/login";
+    		String requestURL = "http://localhost:8080/MJServer/login";
     		 URL url = new URL(requestURL);  
              HttpURLConnection conn = (HttpURLConnection) url.openConnection();  
              conn.setReadTimeout(TIME_OUT);  
@@ -168,13 +168,14 @@ public class MainActivity extends Activity {
     	
     	
     	
-    	URL url= new URL("http://192.168.1.17:8080/MJServer/order");
+    	URL url= new URL("http://192.168.1.21:8080/MJServer/order");
     	HttpURLConnection conn = (HttpURLConnection)url.openConnection();
     	conn.setRequestMethod("POST");
     	 conn.setReadTimeout(TIME_OUT);  
          conn.setConnectTimeout(TIME_OUT); 
          conn.setRequestProperty("Content-Type", "application/json");
-    	String jsonStr ="{\"shop_id\":\"123456\",\"shop_name\":\"我的精品屋\",\"user_id\":\"456\"}";
+//    	String jsonStr ="{\"shop_id\":\"123456\",\"shop_name\":\"我的精品屋\",\"user_id\":\"456\",\"isregister\":true}";
+         String jsonStr = "{  \"ishaha\" : false,  \"nimabi\" : 1,  \"nijibi\" : 0,  \"isRegister\" : true,  \"user_id\" : \"899\",  \"shop_id\" : \"1243324\",  \"shop_name\" : \"啊哈哈哈\"}";
     	byte[] jsonArr = jsonStr.getBytes();
     	OutputStream stream = conn.getOutputStream();
     	stream.write(jsonArr);
