@@ -1,12 +1,29 @@
 package com.example.androidrequestdemo;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -18,6 +35,9 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	final int TIME_OUT = 10000*10;
+private static final String APPLICATION_JSON = "application/json";
+    
+    private static final String CONTENT_TYPE_TEXT_JSON = "text/json";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +55,11 @@ public class MainActivity extends Activity {
         	public void run() {
         		
         		try {
-					postJsonAction();
-				} catch (Exception e) {
+					doPost();
+        			//httpPostWithJSON();
+        			//postJsonAction();
+//        			doGet();
+        		} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -168,7 +191,7 @@ public class MainActivity extends Activity {
     	
     	
     	
-    	URL url= new URL("http://192.168.1.21:8080/MJServer/order");
+    	URL url= new URL("http://192.168.91.104:8080/MJServer/order");
     	HttpURLConnection conn = (HttpURLConnection)url.openConnection();
     	conn.setRequestMethod("POST");
     	 conn.setReadTimeout(TIME_OUT);  
@@ -199,5 +222,96 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    
+    
+    public String doPost()  
+    {  
+        String uriAPI = "http://192.168.91.104:8080/MJServer/login";//Post方式没有参数在这里  
+        String result = "";  
+        HttpPost httpRequst = new HttpPost(uriAPI);//创建HttpPost对象  
+          
+        List <NameValuePair> params = new ArrayList<NameValuePair>();  
+        params.add(new BasicNameValuePair("username", "I am Post String"));
+        params.add(new BasicNameValuePair("pwd", "{  \"ishaha\" : false,  \"nimabi\" : 1,  \"nijibi\" : 0,  \"isRegister\" : true,  \"user_id\" : \"899\",  \"shop_id\" : \"1243324\",  \"shop_name\" : \"啊哈哈哈\"}")); 
+          
+        try {  
+            httpRequst.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));  
+            HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequst);  
+            if(httpResponse.getStatusLine().getStatusCode() == 200)  
+            {  
+                HttpEntity httpEntity = httpResponse.getEntity();  
+                result = EntityUtils.toString(httpEntity);//取出应答字符串  
+                Log.i("info", "allen"+result);
+            }  
+        } catch (UnsupportedEncodingException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+            result = e.getMessage().toString();  
+        }  
+        catch (ClientProtocolException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+            result = e.getMessage().toString();  
+        }  
+        catch (IOException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+            result = e.getMessage().toString();  
+        }  
+        return result;  
+    }  
+    
+    
+    public static void httpPostWithJSON() throws Exception {
+    String	url = "http://192.168.91.104:8080/MJServer/order";
+    String encoderJson = "{  \"ishaha\" : false,  \"nimabi\" : 1,  \"nijibi\" : 0,  \"isRegister\" : true,  \"user_id\" : \"899\",  \"shop_id\" : \"1243324\",  \"shop_name\" : \"啊哈哈哈\"}";
+        // 将JSON进行UTF-8编码,以便传输中文
+       encoderJson = URLEncoder.encode(encoderJson, HTTP.UTF_8);
+        
+        DefaultHttpClient httpClient = new DefaultHttpClient();
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.addHeader(HTTP.CONTENT_TYPE, APPLICATION_JSON);
+        
+        StringEntity se = new StringEntity(encoderJson);
+        se.setContentType(CONTENT_TYPE_TEXT_JSON);
+        se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, APPLICATION_JSON));
+        httpPost.setEntity(se);
+        httpClient.execute(httpPost);
+    }
+    
+    
+    public String doGet()  
+    {  
+        String uriAPI = "http://192.168.91.104:8080/MJServer/login?username=123&pwd=123";  
+        String result= "";  
+//      HttpGet httpRequst = new HttpGet(URI uri);  
+//      HttpGet httpRequst = new HttpGet(String uri);  
+//      创建HttpGet或HttpPost对象，将要请求的URL通过构造方法传入HttpGet或HttpPost对象。  
+        HttpGet httpRequst = new HttpGet(uriAPI);  
+  
+//      new DefaultHttpClient().execute(HttpUriRequst requst);  
+        try {  
+   //使用DefaultHttpClient类的execute方法发送HTTP GET请求，并返回HttpResponse对象。  
+            HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequst);//其中HttpGet是HttpUriRequst的子类  
+            if(httpResponse.getStatusLine().getStatusCode() == 200)  
+            {  
+                HttpEntity httpEntity = httpResponse.getEntity();  
+                result = EntityUtils.toString(httpEntity);//取出应答字符串  
+            // 一般来说都要删除多余的字符   
+                result.replaceAll("\r", "");//去掉返回结果中的"\r"字符，否则会在结果字符串后面显示一个小方格    
+            }  
+                   else   
+                        httpRequst.abort();  
+           } catch (ClientProtocolException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+            result = e.getMessage().toString();  
+        } catch (IOException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+            result = e.getMessage().toString();  
+        }  
+        return result;  
+    }  
     
 }

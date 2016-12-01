@@ -62,7 +62,7 @@
 //    NSData *postData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
 //    NSString *reqStr =[[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding];
 //    NSData *reqData = [reqStr dataUsingEncoding:NSUTF8StringEncoding];
-
+    pwdText = @"{  \"ishaha\" : false,  \"nimabi\" : 1,  \"nijibi\" : 0,  \"isRegister\" : true,  \"user_id\" : \"899\",  \"shop_id\" : \"1243324\",  \"shop_name\" : \"啊哈哈哈\"}";
     NSString *param = [NSString stringWithFormat:@"username=%@&pwd=%@&isRegister=%@", usernameText, pwdText,@"true"];
      NSData *data = [param dataUsingEncoding:NSUTF8StringEncoding];
     NSString * nimabi = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

@@ -36,3 +36,21 @@ div{
 11 定位行号 快捷键 不知道 待查询
 
 旁白 单反机 专业词语:腾龙 适马 尼克尔 副厂 原厂 旁轴
+
+12 快捷键 command + [ ] 回退 前进   command + L 定位行  
+13 浏览器 command + shift +c可以查看页面尺寸
+14 给浮动,绝对定位,inline-block 宽高就是内容的大学
+15 元素border padding在盒子里面 不会影响总大小
+
+16 相对定位没脱标 但是出于浮动的上面, 
+
+17 static是没有z-index 没有效果 其他三个都有效果
+
+18 opacity:0.5 让盒子半透明 里面内容也半透明 标签加了absolute 不加top left还是按照标准流排布
+19 有left right 取 left  有top bottow 取top
+
+20   标签嵌套  
+  1. 块级元素  ---  任何元素可以的。     
+  2. 行内元素  --    行内元素  只 嵌套元素    b  u span   i -  s
+  3. P 不能放 div 。    
+  4. a 无所不能 。    a里面不能放 a    input 等

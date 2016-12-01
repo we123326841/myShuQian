@@ -47,6 +47,9 @@
     NSString * content = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
     
     NSString * ioio = @"{  \"ishaha\" : false,  \"nimabi\" : 1,  \"nijibi\" : 0,  \"isRegister\" : true,  \"user_id\" : \"899\",  \"shop_id\" : \"1243324\",  \"shop_name\" : \"啊哈哈哈\"}";
+    
+    NSData *ioioData = [ioio dataUsingEncoding:NSUTF8StringEncoding];
+     NSString * ioio2 =[[NSString alloc] initWithData:ioioData encoding:NSUTF8StringEncoding];
     request.HTTPBody = json;
 //    request.HTTPBody = [ioio dataUsingEncoding:NSUTF8StringEncoding];
     

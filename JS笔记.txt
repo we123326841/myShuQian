@@ -8,3 +8,25 @@
 3 if(i<60){}else if(i<80){} 其实有两层含义 一点是 不满足上面的i<60 就是 i<80 && i>=60 并且只要满足其中一个 就会跳出所有if
 
 var a 没有赋值 就是undefined  undefined加任何数 都是 NaN  NaN是number类型 
+
+window.onload 表示页面加载完毕 (页面加载完毕表示:html ,样式 ,图片,段落加载完毕) 这个时候是可以获取到元素
+
+页面没加载完毕的时候 菊花在转  页面加载完毕菊花消失
+
+4 href=“javascript:;” 表示的是执行一个空的函数 和 href = “javascript:void(0);” 等价
+
+href = “onclick = ‘fun()’” 要用单引号
+
+数据的转换 String() Boolean() Number()  !!可以转为boolean  -*/可以把字符串转为 数字  
+
+如果var i =“2” i++ 自动转换为 number类型  但是 i = i +1 依然是字符串类型 
+
+“” 转为boolean 就是false 其他基本都是true
+
+NAN: not a number
+parseInt(110,2);
+把二进制110 转换为 十进制
+
+ false、undefined 、null、0、””  为 false 
+ true、1、”somestring”、[Object]  为 true
+
