@@ -173,3 +173,11 @@ div属于块状元素，即添加div标签会引起换行，同样可以作为�
 
 66 行内块元素(inline-block) img input 在同一行显示 可以设置宽度 高度
 
+67 父元素加font-size: 0 可以去掉子元素(inline-block)空格间隙
+68 border: 0 none 可以去掉边框
+
+判断是不是inline-block 
+inline:意思是可以与其他元素排成一排
+block:意思是它可以设置高宽
+如果符合两个条件就是inline-block，你用CSS设置一下看看情况就明白
+
