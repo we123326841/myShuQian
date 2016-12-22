@@ -71,3 +71,100 @@ console.log("<hr width = ’40%’>”) 打印的是 <hr width = ’40%’>
 
 
 input:button ==> <input type = “button”>
+
+
+
+
+<div> //1
+    <p>你麻痹</p> //2
+    <p>你麻痹鸡巴</p>//3
+    <p>你麻痹</p>//4
+    <p>你麻痹</p>//5
+    <p>你麻痹</p>//6
+    <p>你麻痹</p>//7
+
+</div>
+
+childNodes 个数为 6 + 7 = 13
+
+关于兼容性的 要先把能执行的写在前面 || 不能执行的写在后面
+
+
+
+
+a||b   如果a是true 那么 b 就不会执行了 如果a是false b就要执行 
+
+a&&b  如果a是false 那么 b 就不会执行了  如果a是true b就执行
+
+setInterval(fn,1000) fn代码执行的时间大于 等待秒数1000 那么是执行完代码 不用等待1000 直接执行下一次 执行的时间间隔为 fn代码执行的时间
+
+如果setInterval执行了两次 那么 第二次执行的也是等着排队执行 不会同时进入fn里面
+
+而java里面的多线程 是可以同时访问一段代码的 想要放置 需要加同步锁
+
+clearInterval 也是等你要结束的计时器执行完毕 才能停止,
+
+&& 比 || 优先级高 先算&& 再算||
+
+水平居中 margin 0 auto 
+让盒子垂直 水平居中的办法  top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+
+只有定位的盒子才有left值 style.left
+
+
+
+offsetWidth    offsetHeight
+得到对象的宽度和高度(自己的，与他人无关) 
+offsetWidth =  width  + border  +  padding   
+div {  width:220px;  border-left:2px solid red; padding:10px;}
+ div.offsetWidth =  220 + 2 + 20     
+ 为什么不用 div.style.width   因为东西 只能得到行内的数值
+offsetLeft  offsetTop    
+返回距离上级盒子（最近的带有定位）左边的位置
+
+如果父级都没有定位则以body 为准   
+这里的父级指的是所有上一级 不仅仅指的是 父亲 还可以是 爷爷 曾爷爷 曾曾爷爷。。。。
+
+
+offsetParent  
+返回改对象的父级 （带有定位） 不一定是亲的爸爸 
+前面学过一个返回父亲(亲的)    parentNode   有所区别
+
+如果当前元素的父级元素没有进行CSS定位（position为absolute或relative），offsetParent为body。
+2、如果当前元素的父级元素中有CSS定位（position为absolute或relative），offsetParent取最近的那个父级元素。
+
+
+10 tagName 标签名 id id名 className class名
+
+11 offsetLeft offsetTop不管有没有本元素有没有定位 都有值 而 left top 只有定位的盒子才有值
+
+offset的类型全部是只读 
+
+
+房间里面盒子一闪一闪的原因是 small 上方(看起来在small里面)有个黄色盒子 但是这个黄色盒子跟small 属于同一级 同一个父亲 当我鼠标在samll上时 执行small.onmouseover 当我鼠标在黄色盒子的时候 执行small.onmouseout 假设此时让黄色盒子隐藏 则立即会执行 small.onmouseover
+
+定位元素父类没有相对定位 则以body为准
+
+
+12 判断一个方法存不存在 就看它有没有打印出undefined  比如 document.getElementsByClassName 在ie8 里面不存在这个方法 于是打印的是undefined  在谷歌浏览器里面打印的有值     或者 window.getSelection 在ie8里面不存在 在谷歌浏览器里面打印的有值 
+
+或者你乱写一个window.ddwqdqw 也是undefined
+
+window.iiijji.deew 会报错 Cannot read property 'deew' of undefined
+
+dwede.dede Uncaught ReferenceError: dwede is not defined
+
+
+window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty(); 针对ie兼容性考虑
+
+
+兼容性就是 指没有这个属性 或者方法
+所以你乱定义的 一个 属性或者方法 也叫undefined window.dadwad 
+
+js 最大对象是 window对象 document 算第二大对象
+
+
+// leader 起始位置  target  目标位置

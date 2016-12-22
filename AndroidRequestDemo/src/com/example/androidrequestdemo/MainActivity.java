@@ -55,9 +55,9 @@ private static final String APPLICATION_JSON = "application/json";
         	public void run() {
         		
         		try {
-					doPost();
+//					doPost();
         			//httpPostWithJSON();
-        			//postJsonAction();
+        			postJsonAction();
 //        			doGet();
         		} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -191,7 +191,7 @@ private static final String APPLICATION_JSON = "application/json";
     	
     	
     	
-    	URL url= new URL("http://192.168.91.104:8080/MJServer/order");
+    	URL url= new URL("http://192.168.1.3:8080/MJServer/order");
     	HttpURLConnection conn = (HttpURLConnection)url.openConnection();
     	conn.setRequestMethod("POST");
     	 conn.setReadTimeout(TIME_OUT);  
