@@ -146,6 +146,9 @@ offset的类型全部是只读
 
 房间里面盒子一闪一闪的原因是 small 上方(看起来在small里面)有个黄色盒子 但是这个黄色盒子跟small 属于同一级 同一个父亲 当我鼠标在samll上时 执行small.onmouseover 当我鼠标在黄色盒子的时候 执行small.onmouseout 假设此时让黄色盒子隐藏 则立即会执行 small.onmouseover
 
+
+放在子元素上 相当于放在父元素上
+
 定位元素父类没有相对定位 则以body为准
 
 
@@ -168,3 +171,5 @@ js 最大对象是 window对象 document 算第二大对象
 
 
 // leader 起始位置  target  目标位置
+
+offsetHeight 有时候获取到的数字不准确 原因是 css还没有渲染完毕
