@@ -173,3 +173,8 @@ js 最大对象是 window对象 document 算第二大对象
 // leader 起始位置  target  目标位置
 
 offsetHeight 有时候获取到的数字不准确 原因是 css还没有渲染完毕
+
+var s = width 那么width 一定是变量
+js 不支持 - 所以 id 不要以 div-content命名
+
+对象 数组是对象   基本数据类型不能有属性和方法
