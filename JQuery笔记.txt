@@ -1,0 +1,23 @@
+jquery官网提供2种jQuery的下载，一种是jquery.js另一种是jquery.min.js
+文件名不一定完全相同，但通常情况下：
+jquery.js是完整的未压缩的jQuery库，文件比较大，一般用于阅读学习源码或修改源码，一般不用于线上项目。
+jquery.min.js是由完整版的jQuery库经过压缩得来，压缩后功能与未压缩的完全一样，只是将其中的空白字符、注释、空行等与逻辑无关的内容删除，并进行一些优化。这个版本一般用于网站引用使用，减小文件体积，降低网站流量，提升访问速度等。
+
+
+2. $(document).ready(function () {)); 是在window.onload之前执行的
+
+3. 一. var obj = {};
+二.var obj1 = new Object();
+1跟2的区别：
+	推荐使用第一个方式
+第二种方式存在效率问题，因为要new对象，会涉及到原型查找的问题。
+
+4.关于div1 position absolute 如果父类没有写relation,则div1元素能被撑出的最大宽度就是body的宽度 如果父类有些relation 则div1元素能被撑出的最大宽度是父类的宽度
+
+click();方法在js里面表示自动点击 在jquery里面表示添加点击事件
+
+jQuery对象转换成DOM对象:
+方式一：$(“#btn”)[0]
+方式二：$(“#btn”).get(0)
+把DOM对象转成了jQuery对象
+$(document)
