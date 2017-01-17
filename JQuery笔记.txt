@@ -21,3 +21,29 @@ jQuery对象转换成DOM对象:
 方式二：$(“#btn”).get(0)
 把DOM对象转成了jQuery对象
 $(document)
+
+jquery 动画有个排队机制 放在一个队列 一个一个排队执行
+
+$(do) 是不等于 $(do)的 因为 $(do) 是创建一次对象 相当于new
+
+调试对html不起作用 只对js代码有效
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+$("#divid").offset({"left": kuanT});此元素没有设置定位的时候 此方法会自动给这个元素加上relative定位
+$(“li”).bind(“click”,function(){});
+$(“ul”).delegate(“li”,”click”,function(){});
+delegate和on是绑定在父元素上的(父元素ul),利用事件捕获和冒泡使子元素li产生伪点击事件  绑定ul一次 没有绑定li  bind 绑定10次 因为有10个li 所以绑定10次
+
+
+trigger会触发事件冒泡，而triggerHandler则不会。 trigger会触发事件的默认行为，triggerHandler则会阻止事件的默认行为(focus事件不被触发);

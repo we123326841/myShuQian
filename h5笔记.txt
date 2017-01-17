@@ -181,3 +181,75 @@ inline:意思是可以与其他元素排成一排
 block:意思是它可以设置高宽
 如果符合两个条件就是inline-block，你用CSS设置一下看看情况就明白
 
+<div class=“content”>aaa</div>
+
+.content::after{
+  content:’bbbb’;
+color:red
+}
+
+类似<div class=“content”>aaa <after>bbbb</after></div>
+
+element.style 行内样式
+
+pseudo 是伪对象
+
+属性以data开头的 只是记录数据的 没有任何作用
+
+document.body.contentEditable = true 可以编辑html页面
+
+不认识的标签 全部当div处理
+
+
+兼容video的浏览器 是播放不了 object标签的视频的  也不能显示video里面的文字 除非你把vedio标签写错. 不兼容video的浏览器 是可以播放object的视频的
+
+
+所谓的不兼容标签 就是 相当于兼容此标签的浏览器 只不过标签写错了
+
+svg 一般定义 图标 字体
+object 载入第三方媒体用到的标签 (flash palyer)
+
+使用svg file的方式 使用<embed> <object> <iframe> Ajax方式加载
+
+Ajax 请求相当于是替换了<svg>文件
+
+svg是不支持src这个属性的
+
+iframe 可以把别的网页文档载进来  因为svg本身也是一个文档 所以iframe可以载进去
+
+alt + 左键
+
+谷歌浏览器有个快捷键esc
+
+
+
+比如一个button放在一个form中，这个button的Default就是提交（submit），但如果你不想让他提交，就可以用e.preventDefault();
+
+打个比方：
+1
+2
+3
+4
+5
+6
+7
+$(document).ready(function(){
+         
+            $("button").click(function(e){
+                $("#show").fadeTo("fast",0);
+                e.preventDefault();
+            });
+ }
+在一个form里有button，还有一个id=show的div（上点颜色），你可以保留e.preventDefault();和去掉e.preventDefault();试试看，效果不同的。
+
+
+line-height:2 表示两倍的font-size大小 比如font-size:20px 那么line-height:40px
+
+文字在行高里面一定是居中的
+
+h5 里面的 header nav 等等标签 跟div是没有区别的
+
+script:src === <script src=“”></script>
+
+
+cache 表示那些文件会被缓存下来 network 哪些文件可以在网络连接的情况下访问

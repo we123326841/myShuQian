@@ -1,0 +1,71 @@
+a||b||c  表示最少写一个 最多写三个
+
+length|percentage 表示多选1
+
+ -webkit- 前缀
+
+
+only-child 与 only-of-type
+
+p:only-child  表示父元素有且只有一个p 并且注意的是<body><p>都是</p></body>这个不成立 属于特殊情况
+p:only-of-type 表示父元素只有一个p元素 但是允许有其他元素 <body><p>都是</p></body> 也是成立的
+
+
+first-of-type 与 first-child 
+p:first-of-type 第一次出现p的时候的元素 (body没有冲突)
+p:first-child p的父元素 并且p是父元素的第一个元素 (body没有冲突)
+
+last-child 与 last-of-type
+同first
+
+
+nth-of-type 与 nth-child
+
+其实区别很简单：:nth-of-type为什么要叫:nth-of-type？因为它是以"type"来区分的。也就是说：ele:nth-of-type(n)是指父元素下第n个ele元素， 
+
+而ele:nth-child(n)是指父元素下第n个元素且这个元素为ele，若不是，则选择失败。
+
+
+nth-last-child 与 nth-last-of-type
+同上
+
+p:empty 表示的是p元素没有内容的时候选中
+p:target 表示瞄所选中的id
+
+
+
+:Pseudo-classes
+::Pseudo-elements
+
+伪类用一个冒号 伪元素用两个冒号 为了兼容性考虑 都可以用一个冒号
+伪元素相当于多添加了元素  伪类相当于添加了一个class
+
+伪对象就是伪元素
+
+
+background-color: transparent; 透明
+
+
+
+H：
+Hue(色调)。0(或360)表示红色，120表示绿色，240表示蓝色，也可取其他数值来指定颜色。取值为：0 - 360
+S：
+Saturation(饱和度)。取值为：0.0% - 100.0%
+L：
+Lightness(亮度)。取值为：0.0% - 100.0%
+A：
+Alpha透明度。取值0~1之间。
+
+
+注意一下tab换行跟按回车换行的区别
+
+
+border-radius内径 = 外径 - 对应的边框宽度
+
+当border-radius半径值小于等于边框宽度时，元素没有内径效果
+
+当圆角半径小于或等于边框宽度时，元素内角是直角
+
+在white-space里面 enter键换行会被当成空行来对待
+而tab,space产生的换行.则视为一个空格
+
