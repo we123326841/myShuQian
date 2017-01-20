@@ -69,3 +69,7 @@ border-radius内径 = 外径 - 对应的边框宽度
 在white-space里面 enter键换行会被当成空行来对待
 而tab,space产生的换行.则视为一个空格
 
+
+background-clip 控制background-color 的位置  控制background-image 可以显示的位置
+
+_下划线是给ie6看的 其他高级浏览器识别不了 不予以渲染
