@@ -73,3 +73,6 @@ border-radius内径 = 外径 - 对应的边框宽度
 background-clip 控制background-color 的位置  控制background-image 可以显示的位置
 
 _下划线是给ie6看的 其他高级浏览器识别不了 不予以渲染
+
+
+伪元素相当于子元素
