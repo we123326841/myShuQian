@@ -1,5 +1,6 @@
 1 站点 就是项目文件夹 
-she wh123… Qqq274  万网 wh1233268411 qqq274… 渣 wh123326841 274—2323 企业 uby.l@lead-surf.com    123QWE!!asd
+she wh123… Qqq274  万网 wh1233268411 qqq274… 渣 wh123326841 274—2323 企业 uby.l@lead-surf.com    123QWE!!asd  公司 leadsurf101@gmail.com /Leadsurf1  appleID：support@blemed.cn
+密码：zhichi@Relev1234   服务器m13243789563_1@163.com 密码qqq...
 
 font-size是设置字体的属性
 font-size:100%;设置字体属性为默认大小，是相对于浏览器默认字体大小或继承body设定的字体大小来说的。
