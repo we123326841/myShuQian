@@ -1,0 +1,37 @@
+bootstrap :包含 css fonts js 三个文件夹  bootstrap不仅是css 也有js哦
+
+lib文件夹里面的内容最好不要动不要改
+
+<meta http-equiv=“X-UA-Compatible” content=“IE=7”>表示用当前IE7来打开网页
+content=edge 表示用最新的ie浏览器打开网页 
+
+在网页外面套了一个盒子 跟网页一样大 将盒子缩放放到手机里面 这个盒子就是视口 这个视口宽度默认是980
+
+1.右边的+ - 跟mac两手放大缩小一致可以缩放  2.右边的+ - 跟mac两手放大缩小一致可以缩放  3次 右边的+ - 跟mac两手放大缩小一致  不能缩放 已经能证明 - + 跟两手方法缩小是一样的
+
+条件注释的作用就是当判断条件满足时,就会执行注释中的html代码,条件不满足时会当做注释忽略掉
+<!—-[if lt IE 9]> <![endif]—>
+
+
+自己写的css文件最好放在框架css的下面 便于修改
+js文件也是一样的 
+
+section 跟div 是一个性质的
+
+
+图标字体是 小 可以控制颜色大小 还是矢量图
+
+
+inline元素（准确来说，是non-replace的inline元素）不能设置竖直方向上的margin和padding，这个是CSS标准所规定的。
+margin的规定见这里：http://www.w3.org/TR/CSS2/box.html#margin-properties
+padding的规定见这里：http://www.w3.org/TR/CSS2/box.html#padding-propertie 之所以不能设置padding，是因为padding的值是根据目标元素的width计算出来的，而inline， non-replace元素的width是不确定的。
+
+
+inline 行内元素 宽高无效。 margin padding只有左右边距有效，上下无效。
+
+行内元素如果a和b都加了一个vertical-align:middle样式，那么就互相对齐了对方的中间位置，也就是它们在垂直方向上的中线对齐了，如下图： 
+
+border-box:
+注意点 height 和 line-height 完全不同 height包括padding border 而 line-height 不包括padding border
+
+类名的变化是js做的

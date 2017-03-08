@@ -47,3 +47,5 @@ delegate和on是绑定在父元素上的(父元素ul),利用事件捕获和冒�
 
 
 trigger会触发事件冒泡，而triggerHandler则不会。 trigger会触发事件的默认行为，triggerHandler则会阻止事件的默认行为(focus事件不被触发);
+
+$是query的别名 $()是一个方法

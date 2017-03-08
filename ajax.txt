@@ -5,3 +5,100 @@
 form表单提交的数据 会改变url地址
 
 用ajax提交数据不会改变地址
+
+
+缓存(两次请求地址一样)  第一次请求 之后数据缓存在本地 第二次请求的时候 不会从服务器拿数据 而是从本地加载数据  
+
+
+解决缓存问题: 在url后面加一个”&_t=“ + new Date().getTime() 组成一个新的url; 因为new Date().getTime() 每次都不一样  所以每次组成的新的url地址都不一致 所以解决了缓存,因为缓存的前提条件是url一致 因为新的url不一样所以不存在缓存.
+
+
+function :两层意思
+1.对象
+2.构造函数
+
+
+<script src="index16.php?_jsonp=jiba"></script> 其中index16.php?_jsonp=jiba 返回的是jiba({"name":"张三","age":"27"}) 相当于 <script>jiba({"name":"张三","age":"27"})</script> 
+
+
+跨域 指的是不在同一个域名下
+两台不同的电脑 每台电脑域名不同 使用ajax无法获取不同域名的数据,只能获取同一域名下的数据 换句话说ajax无法解决跨域问题
+会报类似的错误:XMLHttpRequest cannot load http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360&_jsonp=abc&code=101280101?undefined&_t=1487950182993. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:63342' is therefore not allowed access.
+
+解决ajax跨域问题
+
+1 script的src方式加载js文件 js文件内进行函数调用 数据以函数参数的形式传递 回调函数中获取参数数据
+
+script src模式也可以跟ajax一样在同一域名上获取数据
+
+
+对比一下 ajax 跟script src模式
+
+1.ajax 只能同域名访问 
+2.script 可以同域名 跨域名 访问
+
+
+
+ajax 分为原生跟 query版本 两者原理是一模一样
+
+
+
+ $.ajax({
+                type:"get",
+                async:true,
+                url:"./index16.php",
+                dataType:"jsonp",
+                jsonp:"_jsonp",
+                jsonpCallback:"jojo",
+                success:function (json) {
+                    console.log("哈哈");
+                    console.log(json);
+                    console.log("哈哈");
+                },
+                error:function () {
+                    console.log("fail");
+                }
+            });
+上面的方式其实就是对js加载src的封装.
+其实最后是 jojo(data){success(data)};
+
+
+
+认识几个软件 local ,centOS65
+
+
+服务器www.allen.com返回
+{"errNum":0,"retMsg":"success","retData":{"cityName":"\u5317\u4eac","provinceName":"\u5317\u4eac","cityCode":"101010100","zipCode":"100000","telAreaCode":"010"}}
+这个在js里面加载src 得不到数据 因为没有函数名 不适合跨域得到数据
+
+这种情况 就在同域名下 用php把服务器www.allen.com的数据获取到 然后返回给html
+
+
+
+不同域名返回{“name”:”haha”}这种格式的是无法通过js得到数据的 跨域条件是 jsonp 按照服务器给的?cb=jojo 最后返回jojo({“name”:”haha”}); 记住cb这个 一定是跟服务器端约定俗成的
+
+
+$.ajax(); 基本都是异步...
+
+
+解决跨域有三种办法
+1.iframe
+2.jsonp
+3.服务器端解决 
+// 指定允许其他域名访问
+header('Access-Control-Allow-Origin:*');
+// 响应类型
+header('Access-Control-Allow-Methods:POST');
+// 响应头设置
+header('Access-Control-Allow-Headers:x-requested-with,content-type'); 
+(一般服务器是不会加这个的)
+
+
+
+//jsonp返回来的数据 只不过放到script标签了而已 
+//而普通的数据返回给客户直接到success:function(data)  data里面了 data是字符串
+
+
+jsonp 跟普通的ajax请求若是同一个url 返回的都是一样的数据jojo({“name”:”zhangsan”}) 只不过 本地处理之后 jsonp 只返回了方法里面的参数{“name”:”zhangsan”}  而普通的ajax请求 返回的是完整的jojo({“name”:”zhangsan”})
+
+jsonp:”awe” jsonCallback:”jaj”  相当于在url?awe=jaj
