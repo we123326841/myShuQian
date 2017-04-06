@@ -1,0 +1,109 @@
+不兼容canvas 的话 会当做div
+
+canvas 要用属性设置宽高 不要用css设置  (css设置的是放大)
+canvas上下文就是一系列功能的封装
+代码要用canvasObj.width  不能用canvasObj.style.width(css样式)
+
+prototype是原型对象 
+
+
+Cat.prototype 有方法   cat1 也有同样方法 优先执行cat1方法 cat1没有方法 才执行Cat.prototype的方法  
+
+Cat.prototype 有属性  cat1 也有同样属性 优先执行cat1属性
+
+ cat1没有属性 才执行Cat.prototype的属性 修改cat1的属性 不会修改Cat.prototype的属性
+
+
+总结cat1修改属性和只会影响本对象的属性和方法 不会影响其他对象和Cat.prototype的属性和方法
+
+
+
+
+
+function  Cat(age) {
+//        this.he = 99;
+        this.age = 18;//this就是cat对象  cat.__proto__ === Cat.prototype
+
+}
+
+var cat1 = new 	Cat();
+cat1.__proto__ === Cat.prototype
+
+
+
+a:function(){}; 跟this.a = function(){}; 都可以理解成 java里面的一个实例方法
+
+
+从原型链中找到的方法 我们可以理解为继承这个方法this表示的当前对象 可以类比java
+
+
+
+
+function My(){
+	this.show = function(){ this.age};
+}
+
+注意 this.show 跟 this.age 的this 没有任何半毛钱的关系
+
+var myCat = new My();
+myCat === this.show里面的this;
+myCat.show(); 的this.age的this===myCat.show()的myCat;
+
+
+window的方法和window的属性可以省略不写
+
+
+继承
+ function Cat(op) {
+
+             this.initValue(op);
+
+        this.show = function () {
+            console.log(this.age+"/"+this.name);
+        }
+    }
+
+
+1.
+
+    Cat.prototype.initValue = function (opotion) {
+        this.age = opotion.age;
+            this.name = opotion.name;
+    };
+
+
+2.
+
+Cat.prototype = {
+        initValue : function (opotion) {
+                    this.age = opotion.age;
+            this.name = opotion.name;
+        }
+    };
+
+以上两种是等效的等效于 下面这种形式
+
+ function Cat(op) {
+
+       this.initValue = function (opotion) {
+            this.age = opotion.age;
+            this.name = opotion.name;
+        }
+        this.initValue(op);
+
+        this.show = function () {
+            console.log(this.age+"/"+this.name);
+        }
+    }
+
+
+
+批量绘制 就是把绘制好的隐藏canvas(隐藏的canvas虽然绘制了很多次矩形 几乎不影响性能) 一次性绘制到显示的canvas上 (显示的canvas只绘制一次)提高了效率
+如果是显示的canvas  绘制了很多次矩形 效率非常低 会很影响性能
+
+对象的类型是object 
+方法类型的function
+
+
+contentMousedown contentTouchStart 兼容pc和移动端
+

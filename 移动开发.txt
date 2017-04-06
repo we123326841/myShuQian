@@ -35,3 +35,165 @@ border-box:
 注意点 height 和 line-height 完全不同 height包括padding border 而 line-height 不包括padding border
 
 类名的变化是js做的
+
+在一个较小的屏幕下展示一个超宽的图片,想让图片居中显示
+1,+背景图
+2,定位 p-a 50%  m-l -width/2
+
+
+
+
+
+
+
+        html,body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+        }
+
+
+
+background-size cover contain 不会拉伸图片 是等比例缩放的
+
+
+img 设置跟父元素宽度一样大 可以随父元素缩放等比例缩放
+
+cover 和 contain 都是等比例缩放
+
+
+
+三、权重计算规则
+
+第一等：代表内联样式，如: style=””，权值为1000。
+第二等：代表ID选择器，如：#content，权值为0100。
+第三等：代表类，伪类和属性选择器，如.content，权值为0010。
+第四等：代表类型选择器和伪元素选择器，如div p，权值为0001。
+通配符、子选择器、相邻选择器等的。如*、>、+,权值为0000。
+继承的样式没有权值。
+
+(SPAN I) 都是一样的效果
+行内元素修改行高 不会影响行内元素框的展示 只会影响外面盒子的高 行高只会影响外面的盒子 对行内元素的行高没有影响
+
+块级元素和块级行内 修改行高 影响快级元素框的展示 也会影响到外面盒子的高
+
+
+rem代表html的fontsize 在整个项目中都用rem表示 便于修改与维护
+em代表当前元素的fontsize
+
+less 可以import
+
+
+2 devicepixelRatio  表示用2个物理像素点来显示1个css px像素     640*960的物理像素 就是320*480的css像素  
+
+viewport 你没有设置的话 默认的是980px
+
+content的width就是body的宽度 指的注意的是 width=device-width initial-scale=0.5 时候 width 会乘以2  如果是个确定的值 比如width=1000px 就不用乘以2
+
+
+在iPhone 3GS中，一个点等于一个像素，也就是说点跟像素可以直接互换；在iPhone 4中，一个点等于两个像素；在iPhone 6 Plus中，一个点等于3个像素。
+
+1dp = (dpi/160)px;
+
+density = dpi/160
+
+density = getResources().getDisplayMetrics().density  = [[UIScreenmainScreen] scale]
+
+density = window.devicePixelRatio 
+
+PX = density * DP
+
+px指的是物理像素
+
+dp指的是设备独立像素
+
+css里面的px 代表dip像素 (point)
+
+
+css px实际上是设备无关像素（dip），它是在css中使用px作为dp的常见模式。
+
+iPhone6的物理像素是750 x 1334，设备像素比(devicePixelRatio)是2，设备独立像素是375 x 667 (750/2 x 1334/2)
+
+Nexus 4的物理像素是768 x 1280，设备像素比(devicePixelRatio)是2，设备独立像素是384 x 640 (768/2 x 1280/2)
+
+物理像素px = 独立像素*density
+
+ios 里面 point点(简称pt) 指的就是dip  独立像素
+
+
+
+总结一句 css里面的px 跟iOS的point 还有android的dp 都是 dip
+
+
+fixed width:100% 是相对于屏幕的 left right 都是相对于屏幕
+
+
+手机屏幕的尺寸按照电脑缩放后的尺寸一致 效果也一致  你把手机屏幕当电脑屏幕就可以了
+
+像素 跟 dp 都是一个定值 在同一个屏幕下
+
+
+我们以一款手机为例来说明这个问题。其主屏尺寸：4寸，主屏分辨率：800x480像素，通过勾股定理计算可知其长宽为3.430寸X2.058寸（87.1毫米X52.3毫米）。800/3.430=233，即每英寸长度有233个像素，每一个像素有87.1/800=0.109毫米大。  就是说这个手机的显示屏共由800X480=384000个边长为0.109毫米大小相等的像素点所组成。任何一张图片在这个显示器里百分之百全屏显示时（图片作为墙纸或屏保时效果最好），其像素点都是这么大。如果图片大过显示屏，则要滑动滚动条才能看完全图，如果小于显示屏，则会居中显示，无图显示处为黑框显示。对于640X480分辨率的图，在此显示屏中会居中显示，在长度方向上两端会有一截为黑框显示。这个图片的尺寸长为69.68毫米，宽为52.3毫米。如果是在光线不足的条件下照得的相片，你会看到一格格的马赛克，画面很是粗糙。  而对于4.3寸主屏，若其分辨率：1280x720像素，则长和宽3.746X2.108（95.2毫米X53.5毫米），1280/3.746=341，即每英寸长度有341个像素，每一个像素有95.2/1280=0.074毫米大。显而易见这个屏幕比前面那个屏显示的效果好得多了。640X480分辨率的图片在这里的长和宽分别为47.6毫米和35.7毫米。 
+
+
+像素在同一个屏幕下 大小是相等的
+所谓像素其实就是一个个方块 每个长跟宽相等并且排满了整个屏幕 假设屏幕是600px * 800px 则 每个像素是长和宽都是1mm 则整个屏幕是由600*800 = 48000个1mm的像素组成 宽是600mm 高是800mm 像素在长和宽上是紧密排列的没有间隙.
+
+屏幕宽度 = 一个像素的长度*宽度上的像素  所以 1mm * 600 = 600mm
+屏幕高度也是一样 所以 1mm * 800 = 800mm
+
+
+
+
+
+备注:
+
+我们以一款手机为例来说明这个问题。其主屏尺寸：4寸，主屏分辨率：800x480像素，通过勾股定理计算可知其长宽为3.430寸X2.058寸（87.1毫米X52.3毫米）。800/3.430=233，即每英寸长度有233个像素，每一个像素有87.1/800=0.109毫米大。
+
+就是说这个手机的显示屏共由800X480=384000个边长为0.109毫米大小相等的像素点所组成。
+
+absolute 的元素设置 width:100% 包括父元素的padding 没有定位的元素 width:100% 不包括padding 就是content
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            margin-top: 50px;
+            height: 210px;
+            line-height: 210px;
+            font-size: 0;
+            text-align: center;
+            background-color: #A2A590;
+        }
+        div img{
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="styles/images/xlf.jpg" alt="logo" id="logo" />
+    </div>
+</body>
+</html>
+
+
+overflow : hidden 还有一个作用 一个父元素有左边一个浮动元素 右边元素加overflowhidden 会跟在左边元素右边
+
+
+
+
+
+a{display:block;line-height:0px;}  img{vertical-align: middle} <a><img/></a> a跟img大相等
+
+
+百度转码 会把你的网页转码成移动网页 并且有广告  加 <meta http-equiv="Cache-Control" content="no-siteapp" />
+ 可以禁止它转码

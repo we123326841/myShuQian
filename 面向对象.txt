@@ -1,0 +1,59 @@
+json 只能表示一个对象 不能表示多个对象
+
+
+function demo {
+	this.name = “王浩”;
+	this.constructor = demo; //这个属性是隐藏起来看不见的 用于 把实例跟构造函数(demo)联系在一起
+}
+
+
+
+
+函数都是对象
+
+Object, Function 既是函数，也是对象。 
+Function跟Object本身也是函数对象。
+官方定义: 在Javascript中,每一个函数实际上都是一个函数对象.
+Object也是函数.因为Object的结构是function Object(){native code}.
+
+
+数据绑定:将后台的json数据和前端的元素(标签)进行绑定
+数据绑定有是那种方式
+原生
+var user = {name:”蜀葵”};
+var span = document.getElementById(“spanId”);
+span.innerHTML = “欢迎”+user.name+”来到百度世界”;
+
+
+formateString
+span.innerHTML = formateString(“欢迎@(name)来到百度世界”,user);
+模板 arttemplate
+
+arttemplate 跟 formateString 原理实现是一样的
+
+
+模板技术其实就是replace的用法
+
+JavaScript 里面,数组也是一种对象
+
+
+我们定义的全局变量 函数 对象其实都是window对象的属性
+
+
+String.prototype.length = 89;
+var s = “1”;
+s.length 打印的还是1 ; 因为length这个属性不在prototype对象里面 在构造方法里面
+
+substring在prototype 可以自己来修改;
+
+call(null);
+this表示的就是window对象
+
+Function和Object，既是函数又是对象
+
+
+    Object.prototype.toString.call(pr);和pr.toString() 一样
+
+在javascript中，函数被认为是第一类对象，即函数可以被传递或者可以携带属性或方法
+
+函数属于引用类型，所以它们也有属性和方法
