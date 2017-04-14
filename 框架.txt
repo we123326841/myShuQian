@@ -1,0 +1,55 @@
+冒泡是从里往外 捕获是从外往里
+
+Uncaught ReferenceError: ho is not defined: 就是没有申明
+
+Cannot read property 'ho' of undefined :undefined.ho
+
+ //微软用法
+    var btn = document.getElementById("div1");
+    btn.attachEvent("onclick",function (e) {
+        window.event.srcElement 
+    });
+
+其中     window.event.srcElement  相当于 w3c的e.target
+
+delegate
+ 可以为动态添加的元素添加事件,传统的事件解决不了
+
+组件 插件 框架 是一个意思
+
+js是不支持私有属性的
+
+less 完全支持css语法 可以完全把css内容复制给less
+
+
+dist
+
+
+php运行环境:用来执行php代码的,然后返回结果给客户端 如果没有php运行环境 客户端得不到返回结果而是直接下载php文件
+js运行环境(Node) 用来执行js代码的 如果没有Node环境  客户端得不到返回结果而是直接下载js文件
+
+
+Node 是js运行环境 类似php的运行环境 用来运行代码的  运行完之后返回结果给客户端
+
+Node只能运行 ES 无法使用Bom和Dom
+
+Node.js其实就是从chrome(可以运行js代码)移植过来的 放在服务端  所以服务器也可以运行js代码    用的V8引擎
+
+
+
+js一般是运行在浏览器上的
+
+Nodejs 类似于java 运行环境jdk
+
+node可以执行js 在命令行就得到验证(frame wanghao$ node js.js) 没有用浏览器
+Node用途 :
+做动态网站 
+
+
+客户端与服务器只能互相传字符
+
+
+nodejs在服务端 执行js代码
+
+node.js 是一个允许开发人员使用 JavaScript 语言编写服务器端代码的框架
+
