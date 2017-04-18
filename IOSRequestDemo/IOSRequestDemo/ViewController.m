@@ -25,7 +25,7 @@
 //    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(downloadImage) object:nil];
 //    thread.name = @"什么鸡巴毛";
 //    [thread start];
-    [self showProgress:45];
+//    [self showProgress:45];
 }
 
 
@@ -37,7 +37,7 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
   
-    [self postUpdate];
+    [self postYuans];
 }
 
 
@@ -190,6 +190,35 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"失败%@",error);
     }];
+}
+
+
+-(void)postYuans{
+    NSString *urlStr = [NSString stringWithFormat:@"http://localhost:8080/MJServer/login?username=123&pwd=123"];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    
+    // 创建一个请求
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSLog(@"begin---");
+    
+    // 发送一个同步请求(在主线程发送请求)
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    // 解析服务器返回的JSON数据
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    NSLog(@"我他妈返回:%@", [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding] );
+    NSLog(@"%@",dict);
+//    NSString *error = dict[@"error"];
+//    if (error) {
+//        // {"error":"用户名不存在"}
+//        // {"error":"密码不正确"}
+//       // [MBProgressHUD showError:error];
+//    } else {
+//        // {"success":"登录成功"}
+//        NSString *success = dict[@"success"];
+//       // [MBProgressHUD showSuccess:success];
+//    }
+
 }
 
 
