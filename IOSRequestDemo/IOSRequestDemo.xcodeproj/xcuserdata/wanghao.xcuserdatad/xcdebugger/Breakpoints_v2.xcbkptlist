@@ -10,29 +10,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOSRequestDemo/ViewController.m"
-            timestampString = "498576972.289724"
+            timestampString = "521909801.566494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-postAction"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSRequestDemo/ViewController.m"
-            timestampString = "498576972.289724"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "-postUpdate"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__28-[ViewController postUpdate]_block_invoke_2"
+                  moduleName = "IOSRequestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanghao/Documents/myShuQian/IOSRequestDemo/IOSRequestDemo/ViewController.m"
+                  timestampString = "521909247.48025"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__28-[ViewController postUpdate]_block_invoke_3"
+                  moduleName = "IOSRequestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanghao/Documents/myShuQian/IOSRequestDemo/IOSRequestDemo/ViewController.m"
+                  timestampString = "521909247.485051"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOSRequestDemo/ViewController.m"
-            timestampString = "498576972.289724"
+            timestampString = "521909801.566494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-postUpdate"
             landmarkType = "7">
             <Locations>
@@ -58,11 +74,11 @@
                   moduleName = "IOSRequestDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wanghao/Documents/myShuQian/IOSRequestDemo/IOSRequestDemo/ViewController.m"
-                  timestampString = "514038608.946744"
+                  timestampString = "521909247.503307"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "168"
-                  endingLineNumber = "168"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
                   offsetFromSymbolStart = "98">
                </Location>
                <Location
@@ -73,11 +89,11 @@
                   moduleName = "IOSRequestDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wanghao/Documents/myShuQian/IOSRequestDemo/IOSRequestDemo/ViewController.m"
-                  timestampString = "514038608.95088"
+                  timestampString = "521909247.507127"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
                   offsetFromSymbolStart = "82">
                </Location>
             </Locations>
@@ -154,12 +170,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOSRequestDemo/ViewController.m"
-            timestampString = "513855607.633644"
+            timestampString = "521909801.566494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "-postYuans"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSRequestDemo/ViewController.m"
+            timestampString = "521909094.075036"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-touchesBegan:withEvent:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSRequestDemo/ViewController.m"
+            timestampString = "521909801.566494"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-postJsonAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

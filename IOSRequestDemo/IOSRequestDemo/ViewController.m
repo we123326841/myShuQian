@@ -37,7 +37,8 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
   
-    [self postYuans];
+//    [self postYuans];
+    [self postAction];
 }
 
 
@@ -58,11 +59,17 @@
     
     
     
-    NSString *str = @"http://192.168.1.17:8080/MJServer/login";
+    NSString *str = @"http://192.168.1.103:8080/MJServer/login";
    ;
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:str]];
     request.HTTPMethod = @"POST";
-    NSString * bodyStr = @"username=123&pwd=123";
+    NSDictionary *dict = @{@"shop_id":@"123213",@"shop_name":@"我的商店头",@"user_id":@"124",@"www":@3,@"ppp":@(YES),@"opopop":@(NO),@"lll":@1};
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+    
+//    NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+
+    NSString * bodyStr = [NSString stringWithFormat:@"username=%@&pwd=123",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
     
     request.HTTPBody = [bodyStr dataUsingEncoding:NSUTF8StringEncoding];
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init]completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
@@ -133,14 +140,15 @@
 
 
 -(void)postJsonAction{
-    NSString *str = @"http://192.168.91.103:8080/MJServer/order";
+    NSString *str = @"http://192.168.1.103:8080/MJServer/order";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:str]];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    NSDictionary *dict = @{@"shop_id":@"123213",@"shop_name":@"我的商店头",@"user_id":@"124"};
+    NSDictionary *dict = @{@"shop_id":@"123213",@"shop_name":@"我的商店头",@"user_id":@"124",@"www":@3,@"ppp":@(YES),@"opopop":@(NO),@"lll":@1};
     
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
     request.HTTPBody = data;
+   NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     }];

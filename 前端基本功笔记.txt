@@ -11,6 +11,10 @@ howard007 howard123
 
 您证书的保护密码为: MKO09ijn1255DByL
 
+
+zfb qqq27… ,5….8.
+wei qqq27… 2..8..
+
 1.git init
 2.git config user.name "someone"
 3.git config user.email "someone@someplace.com"
@@ -70,3 +74,24 @@ div{
   2. 行内元素  --    行内元素  只 嵌套元素    b  u span   i -  s
   3. P 不能放 div 。    
   4. a 无所不能 。    a里面不能放 a    input 等
+
+
+绿色是版本控制的文件 红色是未加入版本控制的文件 红色的文件有两种选择 一种是加入版本控制  一种是被忽略 被忽略的文件 不会被提交到svn服务器  删除文件可以同步  前提是加入到版本控制 蓝色是修改的
+提交只能提交到+1 的版本 所以每次都要更新
+
+
+
+不管是UIButton TextView Activity只要是一个控件有一个子类  那这个子类跟这个控件一样是会固定的调用某几个方法比如 :
+-(CGRect)titleRectForContentRect:(CGRect)contentRect 这个方法 控件和子类都会调用 (已经确认)
+
+如果是UIButton对象 UIButton对象执行titleRectForContentRect   如果是UIButton子类对象 就执行子类对象的titleRectForContentRect
+
+
+么么:742..
+
+
+
+先执行 先打印
+
+
+有些数据是请求不到的 比如tpl 跟php关联 php把数据给到tpl 在返回给客户端 客户端无法直接把数据请求到的...
