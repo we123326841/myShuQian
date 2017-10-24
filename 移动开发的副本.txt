@@ -1,0 +1,10 @@
+function App1() {
+  return <Greeting firstName="Ben" lastName="Hector" />;
+}
+
+function App2() {
+  const props = {firstName: 'Ben', lastName: 'Hector'};
+  return <Greeting {...props} />;
+}
+
+这两个是等价的 注:单引号双引号 是没区别的
